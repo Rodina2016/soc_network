@@ -1,0 +1,22 @@
+.content {
+    padding: 16px;
+    margin-top: 10px;
+    grid-area: c;
+    background-color: #6E86D6;
+}
+
+.banner {
+    height: 250px;
+    overflow: hidden;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar img {
+    max-width: 150%;
+}
