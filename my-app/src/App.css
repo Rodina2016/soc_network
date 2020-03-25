@@ -8,3 +8,10 @@
   width: 1200px;
   margin: 0 auto;
 }
+
+.content {
+  padding: 16px;
+  margin-top: 10px;
+  grid-area: c;
+  background-color: #6E86D6;
+}

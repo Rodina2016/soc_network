@@ -15,6 +15,10 @@
     color: #fff;
 }
 
-.link.active {
+.link:hover {
+    color: #FFAA00;
+}
+
+.item a.active {
     color: #FFAA00;
 }
