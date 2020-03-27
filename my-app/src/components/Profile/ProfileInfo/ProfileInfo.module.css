@@ -1,0 +1,20 @@
+.banner {
+    height: 250px;
+    overflow: hidden;
+}
+
+.avatar {
+    margin: 16px 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar img {
+    max-width: 150%;
+}
+
+.profileInfo {
+
+}
