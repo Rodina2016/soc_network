@@ -4,16 +4,20 @@ import Post from "../Post/Post";
 
 const MyPosts = (props) => {
 
-    let postsElements = props.props
+    console.log(props);
+
+    let postsElements = props.props.posts
         .map(item => <Post message={item.text} likes={item.likesCount} key={item.id}/>);
 
     let newPostElem = React.createRef();
 
     const addPost = () => {
-        debugger;
+        props.addPost();
+    };
+
+    const onPostChange = () => {
         let text = newPostElem.current.value;
-        newPostElem.current.value = '';
-        props.addPost(text);
+        props.updateNewPostText(text);
     }
 
     return (
@@ -22,7 +26,7 @@ const MyPosts = (props) => {
                     My posts
                 </h1>
                 <div className={classes.form}>
-                    <textarea name="" id="" cols="30" rows="10" ref={newPostElem}></textarea>
+                    <textarea name="" id="" cols="30" rows="10" ref={newPostElem} value={props.props.newPostText} onChange={onPostChange}/>
                     <div>
                         <button onClick={addPost}>Add post</button>
                         <button>Remove</button>
