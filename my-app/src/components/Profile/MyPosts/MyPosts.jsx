@@ -1,10 +1,9 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from "../Post/Post";
+import store from "../../../redux/state";
 
 const MyPosts = (props) => {
-
-    console.log(props);
 
     let postsElements = props.props.posts
         .map(item => <Post message={item.text} likes={item.likesCount} key={item.id}/>);
