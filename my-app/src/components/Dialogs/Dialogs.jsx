@@ -5,7 +5,6 @@ import Message from "./Message/Message";
 import {sendMessageActionCreator, updateNewMessageBodyCreator} from "../../redux/dialogsReducer";
 
 const  Dialogs = (props) => {
-    console.log(props);
 
     let dialogElements = props.dialogsData.dialogs
         .map( item => <DialogItem name={item.name} id={item.id} key={item.id}/>);

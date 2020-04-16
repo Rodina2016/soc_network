@@ -1,10 +1,11 @@
 import './index.css';
-import store, {subscribe} from "./redux/state";
+import store from "./redux/redux-store";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {addPost, updateNewPostText} from "./redux/state";
+
+console.log(store);
 
 let rerenderTree = (state) => {
     ReactDOM.render(
@@ -17,5 +18,8 @@ let rerenderTree = (state) => {
 
 rerenderTree(store.getState());
 
-store.subscribe(rerenderTree);
+store.subscribe(() => {
+    let state = store.getState()
+    rerenderTree(state);
+});
 
