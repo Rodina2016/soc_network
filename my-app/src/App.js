@@ -14,8 +14,8 @@ const  App = (props) => {
             <Header/>
             <Navbar/>
            <div className="content">
-            <Route path='/dialogs' render={() => {return <DialogsContainer store={props.store}/>}}/>
-            <Route path='/profile' render={() => {return <Profile store={props.store}/>}}/>
+            <Route path='/dialogs' render={() => {return <DialogsContainer/>}}/>
+            <Route path='/profile' render={() => {return <Profile/>}}/>
           </div>
         </div>
     </BrowserRouter>
