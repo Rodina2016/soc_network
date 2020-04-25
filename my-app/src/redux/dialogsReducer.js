@@ -44,7 +44,6 @@ export const sendMessageActionCreator = () => {
 }
 
 
-
 export const updateNewMessageBodyCreator = (text) => {
     return {
         type: UPDATE_NEW_MESSAGE_BODY,
