@@ -4,16 +4,20 @@ import * as axios from "axios";
 
 let Users = (props) => {
 
-  if(props.users.length === 0) {
+ const getUsers = () => {
+     if(props.users.length === 0) {
 
-      axios.get("https://social-network.samuraijs.com/api/1.0/users")
-          .then(response => {
-              props.setUsers(response.data.items);
-          });
-  }
+         axios.get("https://social-network.samuraijs.com/api/1.0/users")
+             .then(response => {
+                 props.setUsers(response.data.items);
+             });
+     }
+ }
+
 
     return (
         <div>
+            <button onClick={getUsers}>getUsers</button>
             {
                 props.users.map(u => {
                     return(
