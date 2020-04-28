@@ -1,14 +1,15 @@
 import React from "react";
 import styles from './users.module.css';
+import * as axios from "axios";
 
 let Users = (props) => {
 
   if(props.users.length === 0) {
-      props.setUsers([
-          {id: 1, follow: false, fullName: 'Sergey', status: 'I am a boss', location: {city: 'Minsk', country: 'Belarus'} },
-          {id: 2, follow: true, fullName: 'Oleg', status: 'Good mood', location: {city: 'Moscow', country: 'Russia'} },
-          {id: 3, follow: false, fullName: 'Masha', status: 'Hi', location: {city: 'Kiev', country: 'ukraine'} }
-      ]);
+
+      axios.get("https://social-network.samuraijs.com/api/1.0/users")
+          .then(response => {
+              props.setUsers(response.data.items);
+          });
   }
 
     return (
@@ -17,10 +18,13 @@ let Users = (props) => {
                 props.users.map(u => {
                     return(
                         <div key={u.id}>
-                            <div>{u.fullName}</div>
+                            <div>{u.name}</div>
+                            <div>
+                                <img src={u.photos.small != null ? u.photos.small : 'https://img.icons8.com/clouds/2x/user.png'} alt={u.name}/>
+                            </div>
                             <div>{u.status}</div>
-                            <div>{u.location.city}</div>
-                            <div>{u.location.country}</div>
+                            <div>{"u.location.city"}</div>
+                            <div>{"u.location.country"}</div>
                             {u.follow ?
                                 <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
                                 :
