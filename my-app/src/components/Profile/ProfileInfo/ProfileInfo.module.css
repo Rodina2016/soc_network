@@ -18,3 +18,11 @@
 .profileInfo {
 
 }
+
+.soc {
+    display: flex;
+}
+
+.socItem {
+    margin-right: 8px;
+}
