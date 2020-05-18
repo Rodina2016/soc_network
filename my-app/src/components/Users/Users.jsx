@@ -1,8 +1,6 @@
 import React from "react";
 import styles from './users.module.css';
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
-import {followUser, unFollowUser} from "../../api/api";
 
 
 let Users = (props) => {
@@ -41,27 +39,12 @@ let Users = (props) => {
                                 <div>{"u.location.country"}</div>
                                 {u.followed ?
                                     <button disabled={props.followingInProgress.some(item => item === u.id)} onClick={() => {
-                                        props.setFollowingProgress(true, u.id);
-                                        unFollowUser(u.id)
-                                            .then(response => {
-                                                if(response.resultCode === 0) {
-                                                    props.unfollow(u.id);
-                                                }
-                                                props.setFollowingProgress(false, u.id);
-                                            });
+                                        props.unfollow(u.id);
 
                                     }}>Unfollow</button>
                                     :
                                     <button disabled={props.followingInProgress.some(item => item === u.id)} onClick={() => {
-                                        props.setFollowingProgress(true, u.id);
-                                        followUser(u.id)
-                                            .then(response => {
-                                                console.log(response);
-                                                if(response.resultCode === 0) {
-                                                    props.follow(u.id);
-                                                }
-                                                props.setFollowingProgress(false, u.id);
-                                            });
+                                        props.follow(u.id);
                                     }}>Follow</button>}
                             </div>
                         </div>
