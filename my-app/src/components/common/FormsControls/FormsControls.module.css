@@ -6,3 +6,11 @@
 .formControl.error span {
     color: #ff6d58;
 }
+
+.formSummaryError {
+    display: inline-block;
+    border: 1px solid #ff6d58;
+    padding: 5px;
+    margin: 10px 0;
+    color: #ff6d58;
+}

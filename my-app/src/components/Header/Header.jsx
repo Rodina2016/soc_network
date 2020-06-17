@@ -9,8 +9,9 @@ const Header = (props) => {
             <img src="https://mediaseller.agency/wp-content/uploads/2019/08/vk-logo-fb.png"/>
 
             <div className={classes.loginBlock}>
-                {props.isAuth ? props.login :
-                    <NavLink to={'/login'}>
+                {props.isAuth
+                    ? <div> {props.login} - <button onClick={props.logout}>Log uot</button></div>
+                    : <NavLink to={'/login'}>
                         Login
                     </NavLink>
                 }
